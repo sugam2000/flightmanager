@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/joy.js"></script>
+</head>
+<body>
+		
+    <div class="row">
+        <div class="columnLateral">
+            <div id="joy1Div" style="width: 300px;height:300px"></div>
+            
+        </div>
+        
+        <div class="columnLateral">
+            <div id="joy2Div" style="width: 300px;height:300px"></div>
+            
+    </div>
+
+<p id="values"></p>
+    <script type="text/javascript">
+// Create JoyStick object into the DIV 'joy1Div'
+//var Joy1 = new JoyStick('joy1Div');
+
+var socket = new WebSocket('ws://127.0.0.1:8081'); 
+socket.onopen = function(event){
+    alert("Connected to server");
+    setInterval(send_data,20);
+};
+
+socket.onerror = function(error){
+    console.error("error",error);
+};
+
+// Create JoyStick object into the DIV 'joy1Div'
+var joy1Param = { "title": "joystick1", "autoReturnToCenter": false };
+var Joy1 = new JoyStick('joy1Div', joy1Param);
+
+// Create JoyStick object into the DIV 'joy2Div'
+var joy2Param = { "title": "joystick2", "autoReturnToCenter": true };
+var Joy2 = new JoyStick('joy2Div', joy2Param);
+
+function get_values(){
+    var channel_1 = Joy1.GetPosX();
+    var channel_2 = Joy2.GetPosY();
+    var channel_3 = Joy2.GetPosX();
+    var channel_4 = Joy1.GetPosY();
+
+    var channel_data = {"channel_1":channel_1,"channel_2":channel_2,"channel_3":channel_3,"channel_4":channel_4};
+    return channel_data ;
+}
+
+function send_data(){
+socket.send(JSON.stringify(get_values()));
+}
+
+ socket.onclose = (e)=>{
+    alert("Disconnected from server");
+ };
+
+    </script>
+</body>
+</html>

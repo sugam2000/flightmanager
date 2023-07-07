@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Manager</title>
+
+  <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <form action="/controller" method="post">
+        <input type="password" class="search-input" name="Authentication" placeholder="Authentication code">
+        <button class="search-button">Controller</button>
+         </form>
+      </div>
+      <div class="card-row">
+        <div class="card">
+          <h3 class="card-title">Altitude :- <span id="Altitude"></span></h3>
+          
+        </div>
+  
+        <div class="card">
+          <h3 class="card-title">Battery :- <span id="Battery"></span></h3>
+          
+        </div>
+  
+        <div class="card">
+          <h3 class="card-title">Signal :- <span id="Signal"></span></h3>
+          
+        </div>
+      </div>
+  
+      <div class="location-box">
+        <h3>Latitude :- <span id="Latitude"></span> Longitude :- <span id="Longitude"></span></h3>
+        <div id="map"></div>
+      </div>
+  
+      <div class="video-box">
+        <h3>Live streaming</h3>
+          <canvas id="video"></canvas>
+      </div>
+    </div>
+  
+    <script src="script/dashboard.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    
+  </body>
+</html>

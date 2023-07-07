@@ -1,0 +1,32 @@
+{
+  "name": "flightmanager",
+  "version": "1.0.0",
+  "description": "This a IOT based drone_receiver for a project purpose.",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "run flightmanager"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sugam2000/flightmanager.git"
+  },
+  "keywords": [
+    "drone",
+    "receiver",
+    "iot",
+    "based",
+    "drone"
+  ],
+  "author": "Sugam Patel",
+  "license": "NONe",
+  "bugs": {
+    "url": "https://github.com/sugam2000/flightmanager/issues"
+  },
+  "homepage": "https://github.com/sugam2000/flightmanager#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^1.14.9",
+    "ws": "^8.13.0"
+  }
+}

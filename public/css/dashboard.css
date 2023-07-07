@@ -1,0 +1,102 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(133, 46, 209);
+    border-radius: 5px;
+  }
+
+  .card-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Start cards from the right */
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #f44336;
+  }
+
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .card-description {
+    font-style: italic;
+  }
+
+  .location-box,
+  .video-box {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 5px #100f0f;
+    height: 500px; 
+    width: 450px;
+    background-color: #f44336;
+  }
+
+  #map {
+    height: 440px;
+  }
+
+  #video {
+    height: 440px;
+    width: 100%;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+  }
+
+  .search-input {
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid #ccc;
+    width: 200px;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+
+  .search-button {
+    padding: 10px 20px;
+    border-radius: 20px 20px 20px 20px;
+    background-color: #f44336;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    
+  }
+
+  .button-container .card-row {
+    margin-left: auto; /* Push the cards to the right */
+  }
+
+  @media only screen and (max-width: 768px) {
+    .card-row {
+      justify-content: flex-start; /* Reset to default: start cards from the left */
+    }
+
+    .card {
+      width: 100%;
+    }
+
+    .location-box,
+    .video-box {
+      flex: 1 1 100%;
+    }
+  }
