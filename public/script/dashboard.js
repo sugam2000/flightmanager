@@ -6,19 +6,23 @@ var map;
 var marker;
 
 var API_KEY;
-
 var script = document.createElement('script');
-script.src = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap";
-document.head.appendChild(script);
 
 fetch('/api_key')
 .then(response => response.text())
 .then(data => {
   API_KEY = data;
+  script.src = "https://maps.googleapis.com/maps/api/js?key="+API_KEY+"&callback=initMap";
 })
 .catch(error => {
   console.log(error);
 });
+
+
+
+document.head.appendChild(script);
+
+
 
 data_socket.onopen = function (e) {
     console.log("data bridge connected");
