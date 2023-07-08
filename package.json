@@ -18,8 +18,10 @@
     "based",
     "drone"
   ],
+
   "author": "Sugam Patel",
-  "license": "NONe",
+  "license" : "SEE LICENSE IN LICENSE file",
+  
   "bugs": {
     "url": "https://github.com/sugam2000/flightmanager/issues"
   },
