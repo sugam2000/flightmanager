@@ -3,7 +3,7 @@
 #include <ArduinoJson.h>
 #include <ESP32Servo.h>
 
-const char* ssid = "Your network ssid ";
+const char* ssid = "your network ssid";
 const char* password = "password";
 const unsigned int localUdpPort = 5000; // UDP port to listen on
 const size_t maxJsonSize = 1024; // Maximum size of JSON buffer
@@ -35,7 +35,7 @@ void setup() {
     "ReceiveDataTask",
     10000,
     NULL,
-    1,
+    0,
     NULL,
     0
   );

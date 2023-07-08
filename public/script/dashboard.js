@@ -5,6 +5,21 @@ var video_socket = new WebSocket('ws://127.0.0.1:8080');
 var map;
 var marker;
 
+var API_KEY;
+
+var script = document.createElement('script');
+script.src = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initMap";
+document.head.appendChild(script);
+
+fetch('/api_key')
+.then(response => response.text())
+.then(data => {
+  API_KEY = data;
+})
+.catch(error => {
+  console.log(error);
+});
+
 data_socket.onopen = function (e) {
     console.log("data bridge connected");
 };
