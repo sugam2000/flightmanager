@@ -24,7 +24,7 @@ The Drone Management Platform offers the following features:
 
 Before installing and using the Drone Management Platform, ensure that you have the following prerequisites:
 
-- **Drone Hardware**: We have tested this firmware with ES32.
+- **Drone Hardware**: We have tested this firmware with ESP32.
 - **Web Server**: A server to host the platform. This can be a local development environment or a public server.
 - **Node.js**: Make sure you have Node.js installed on your server or development machine. You can download it from the official Node.js website: [https://nodejs.org](https://nodejs.org)
 
@@ -50,7 +50,7 @@ Follow these steps to install the Drone Management Platform:
    npm install
    ```
 
-4. Configure the platform by editing the `config.js` file and updating the necessary settings, such as API keys, server configurations, and other options.
+4. Configure the platform by editing the `.env` file and updating the necessary settings, such as API keys, server configurations, and other options.
 
 5. Build the project:
 
